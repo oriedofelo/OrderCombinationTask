@@ -33,8 +33,8 @@ public class OrderCombination {
         B.setPickUpLocation(bPickUpLocation);
         Location bDropOffLocation = new Location();
         bDropOffLocation.setLocation("Z");
-        bDropOffLocation.setLatitude(-1.3131496);
-        bDropOffLocation.setLongitude(36.8934144);
+        bDropOffLocation.setLatitude(-1.3137385);
+        bDropOffLocation.setLongitude(36.8939304);
         B.setDropOffLocation(bDropOffLocation);
         orders.add(A);
         orders.add(B);
