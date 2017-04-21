@@ -70,6 +70,30 @@ public class CombineOrders {
     if(GeoUtility.coordinatesNearEachOther(x.getDropOffLocation(), y.getDropOffLocation()))
     	return true;
     
+    
+    //pick up locations equal drop off
+    if(GeoUtility.coordinatesEqual(x.getPickUpLocation(), y.getDropOffLocation()))
+    	return true;
+    
+    
+    //pick up locations intersect drop off
+    if(GeoUtility.coordinatesIntersect(x.getPickUpLocation(), y.getDropOffLocation()))
+    	return true;
+    
+    //pick up locations overlap dropoff
+    if(GeoUtility.coordinatesOverlap(x.getPickUpLocation(), y.getDropOffLocation()))
+    	return true;
+  
+  //drop off locations within each other
+    if(GeoUtility.coordinatesWithin(x.getPickUpLocation(), y.getDropOffLocation()))
+    	return true;
+    
+    //pick up locations one contains the other
+    if(GeoUtility.coordinatesContains(x.getPickUpLocation(), y.getDropOffLocation()))
+    	return true;
+    
+    if(GeoUtility.coordinatesNearEachOther(x.getPickUpLocation(), y.getDropOffLocation()))
+    	return true;
      // orders cannot be combined
      return false;
 
