@@ -18,6 +18,7 @@ public class CombineOrders {
 		// pick up locations equal
 		if (GeoUtility.coordinatesEqual(x.getPickUpLocation(), y.getPickUpLocation()))
 			return true;
+		
 
 		// drop off locations equal
 		if (GeoUtility.coordinatesEqual(x.getDropOffLocation(), y.getDropOffLocation()))
