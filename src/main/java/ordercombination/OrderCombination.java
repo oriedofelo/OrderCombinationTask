@@ -2,6 +2,8 @@ package ordercombination;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.joda.time.DateTime;
+
 /**
  *
  * @author felix.ojiem
@@ -20,25 +22,28 @@ public class OrderCombination {
         A.setPickUpLocation(aPickUpLocation);
         Location aDropOffLocation = new Location();
         aDropOffLocation.setLocation("Y");
-        aDropOffLocation.setLatitude(0.5168118);
-        aDropOffLocation.setLongitude(35.2739668);
+        aDropOffLocation.setLatitude(-0.3154676);
+        aDropOffLocation.setLongitude(35.9387712);
         A.setDropOffLocation(aDropOffLocation);
-
+        //set date time; year/month/day/hour/minute
+        A.setOrderDateTime(new DateTime(2017, 5, 3, 10, 34));
         Order B = new Order();
         B.setOrderName("B");
         Location bPickUpLocation = new Location();
         bPickUpLocation.setLocation("X");
-        bPickUpLocation.setLatitude(0.5168118);
-        bPickUpLocation.setLongitude(35.2739668);
+        bPickUpLocation.setLatitude(-0.7134721);
+        bPickUpLocation.setLongitude(36.415688);
         B.setPickUpLocation(bPickUpLocation);
         Location bDropOffLocation = new Location();
         bDropOffLocation.setLocation("Z");
-        bDropOffLocation.setLatitude(0.5152843);
-        bDropOffLocation.setLongitude(35.2734052);
+        bDropOffLocation.setLatitude(-1.3044564);
+        bDropOffLocation.setLongitude(36.7073077);
         B.setDropOffLocation(bDropOffLocation);
+      //set date time; year/month/day/hour/minute
+        B.setOrderDateTime(new DateTime(2017, 5, 3, 10, 32));
         orders.add(A);
         orders.add(B);
-
+        
         CombineOrders combiner = new CombineOrders();
         // try to combine orders
         ArrayList<ArrayList<Order>> combinedOrders = combiner.combineOrders(orders);
